@@ -27,13 +27,20 @@
             android:name=".DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar"
-
-
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.arslan.sunshine2.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.arslan.sunshine2.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.example.arslan.sunshine2.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

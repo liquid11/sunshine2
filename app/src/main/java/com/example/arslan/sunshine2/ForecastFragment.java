@@ -1,6 +1,7 @@
 package com.example.arslan.sunshine2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.nfc.Tag;
 import android.os.AsyncTask;
@@ -80,12 +81,17 @@ public   ArrayAdapter<String> mForecastAdapter;
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem =  mForecastAdapter.getItem(position);
                 Toast.makeText(getActivity(),selectedItem,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, selectedItem);
+                startActivity(intent);
+
             }
         });
 
 
         return rootView;
     }
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
@@ -240,7 +246,7 @@ public   ArrayAdapter<String> mForecastAdapter;
                     mForecastAdapter.add(dayForecastStr);
                 }
 
-                mForecastAdapter.notifyDataSetChanged();
+             /*   mForecastAdapter.notifyDataSetChanged();*/
 
                 listView.setAdapter(mForecastAdapter);
 
